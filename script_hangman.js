@@ -8,9 +8,14 @@ function setWord() {
         return
     word = document.getElementById("inputField").value
     splitWord(word)
-    document.getElementById("inputField").value = "Player 1 Done"
-    document.getElementById("inputField").disabled = true
-    document.getElementById("input1").disabled = true
+    document.getElementById("field").innerHTML = ""
+    document.getElementById("guessField").innerHTML = '\
+    <br>\
+    <input type="text" maxlength="1" id="charField" placeholder="Player 2 try letter here">\
+    <Button type="submit" id="input2" onclick="tryLetter()">Submit</Button>\
+    <div id="lives">Attempts remaining : 6</div>\
+    <div id="triedLetters"></div>\
+    '
 }
 
 function splitWord(word) {
